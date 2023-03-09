@@ -10,7 +10,7 @@ class UsersController extends Controller
 {
     public function index(UsersDataTable $dataTable)
     {
-        return $dataTable->render('users.index');
+        return $dataTable->addScope(new SearchBuilder)->render('users.index');
     }
 
     public function store(UsersDataTableEditor $editor)

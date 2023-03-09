@@ -33,7 +33,6 @@ class UsersDataTable extends DataTable
     {
         return $model->newQuery()->select('id', 'name', 'email');
     }
-
     /**
      * Optional method if you want to use html builder.
      *
@@ -45,7 +44,8 @@ class UsersDataTable extends DataTable
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->parameters([
-                'dom' => 'Bfrtip',
+                'dom' => 'QBfrtip',
+                'serverSide' => 'true',
                 'order' => [1, 'asc'],
                 'select' => [
                     'style' => 'os',
